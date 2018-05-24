@@ -1,0 +1,342 @@
+/* add serie */
+
+.formSerie {
+    background-color: #e6e6e6;
+    padding: 15px 50px 15px 50px;
+    width: 650px;
+    border-radius: 15px;
+    width: 701px;
+
+}
+
+.policeForm {
+    font-family: "open_sans",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    color: #3B3B3B;
+}
+
+.inputFormSerie {
+    height: 34px;
+    padding-left: 10px;
+}
+
+.divFormSerie {
+    width: 100%;
+    padding: 15px 0px 15px 0px;
+    margin: 8px 0px 8px 0px;
+}
+
+.divFormSerie2 {
+    width: 289px;
+    padding: 15px 0px 15px 0px;
+    margin: 8px 0px 8px 0px;
+}
+
+.inputTaille {
+    width: 275px;
+    height: 34px;
+    padding-left: 10px;
+}
+
+.inputTaille2 {
+    width: 275px;
+    height: 34px;
+    padding-left: 10px;
+    margin: 23px 0px 23px 0px;
+}
+
+.inputTaille3 {
+    width: 275px;
+    height: 34px;
+    padding-left: 10px;
+}
+
+.inputTaille4 {
+    width: 275px;
+    height: 28px;
+    padding-left: 10px;
+}
+
+.input-hidden {
+    display: block;
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.colorDiv {
+    background-color: #F0F0F0;
+}
+
+
+
+/* read serie */
+
+.serie {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+}
+
+.imgSerie {
+    width: 85px;
+    height: auto;
+}
+
+.divInfo1 {
+    width: 60%;
+    justify-content: space-around;
+}
+
+.divInfo1 div:nth-child(1) {
+    width: 340px;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: 40px;
+    border-right: #e6e6e6 2px solid;
+}
+
+.divInfo1 div:nth-child(2) {
+    width: 290px;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: 30px;
+
+}
+
+.divStatut {
+    width: 150px;
+}
+
+.divInfo1 div h3 {
+    font-weight: 600;
+}
+
+.colorCollege {
+    text-align: center;
+    padding: 5px;
+    color: orange;
+    background-color: #F0F0F0;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.colorDate {
+    text-align: center;
+    padding: 5px;
+    background-color: #F0F0F0;
+    margin-top: -5px;
+}
+
+.marginRight {
+    margin-right: 15px;
+}
+
+.marginRight2 {
+    margin-right: 5px;
+}
+
+.marginBot {
+    margin-bottom: 20px;
+}
+
+.marginBot2 {
+    margin-bottom: 8px;
+}
+
+.marginTop {
+    margin-top: 30px;
+}
+
+.marginTop2 {
+    margin-top: 20px;
+}
+
+.detailSerie {
+    min-width: 320px;
+}
+
+textarea {
+    height: 60px;
+    width: 659px;
+    font-family: "open_sans",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    color: #3B3B3B;
+}
+
+.colorWhite {
+    background-color: white;
+
+}
+
+.detailSup {
+    background-color: white;
+    padding: 20px 20px 5px 20px;
+    width: 309px;
+}
+
+form {
+
+}
+
+.tailleDivFleche {
+    width: 70px;
+}
+
+.dateBorder {
+    border-bottom: #e6e6e6 solid 20px;
+}
+
+.padding {
+    padding: 20px;
+    width: 661px;
+}
+
+.marginNegatif {
+    margin-top: -20px;
+}
+
+.marginNegatif2 {
+    margin-top: -25px;
+}
+
+.nomCollege {
+    text-align: center;
+}
+
+.message {
+    padding: 20px 20px 5px 20px;
+}
+.date {
+    padding: 10px 15px 10px 15px;
+    border: 1px solid #c0c0c0;
+    border-left: none;
+    background-color: white;
+    outline: none;
+}
+.date:hover {
+    cursor: pointer;
+}
+.date:first-child {
+    border: 1px solid #c0c0c0;
+    border-radius: 8px 0 0 8px;
+}
+.date:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.input-search {
+    padding-left: 10px;
+    border: 1px solid #c0c0c0;
+    border-radius: 8px 0 0 0;
+    width: 767px;
+}
+.input-search:focus {
+	outline: none;
+}
+.check {
+    border: 1px solid #56AAE5;
+    background-color: #478EBF;
+    color: white;
+    border-left: none;
+} 
+.check:first-child {
+    border: 1px solid #56AAE5;
+    background-color: #478EBF;
+}
+.select-search {
+    padding: 0 5px 0 5px;
+    border: 1px solid #c0c0c0;
+    outline: none;
+    border-right: none;
+}
+
+.select-search:first-child {
+    margin-left: 25px;
+}
+.select-search:last-child {
+    border: 1px solid #c0c0c0;
+}
+
+.formSearch {
+    width: 900px;
+    margin: auto;
+}
+
+/* jquery ui */
+ul.ui-widget.ui-widget-content {
+    border-top: none;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid #c5c5c5;
+}
+.ui-widget-content {
+    border: 1px solid #dddddd;
+    background: #ffffff;
+    color: #333333;
+}
+.ui-widget {
+    font-family: "open_sans",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    color: #3B3B3B;
+}
+.ui-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    outline: 0;
+}
+.ui-autocomplete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: default;
+}
+.ui-front {
+    z-index: 100;
+}
+
+.ui-menu-item {
+    margin: 0;
+    cursor: pointer;
+}
+
+.ui-menu .ui-menu-item-wrapper{
+    position: relative;
+    padding: 8px 0px 8px 10px;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	outline: none;
+	background: #478EBF;
+    font-weight: normal;
+    color: white;
+    border: none;
+    border-top: none;
+}
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+    width: 60%;
+    margin-right: 5%;
+}

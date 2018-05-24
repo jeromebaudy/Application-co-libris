@@ -1,0 +1,54 @@
+<% include head %>
+<% include header %>
+<div class="main">
+    <section class="column avecAlign section1">
+        <div class="maxWidth">
+            <h1>Création d'une série</h1>
+            <p>Dans cet espace vous pouvez créer les séries que vous proposer au prêt sur l'application.</p>
+        </div>
+    </section>
+    <section class="rowCenter avecAlign">
+        <form class="column avecAlign formSerie" action="/docu_addSerie" method="POST">
+            <div class="row avecAlign divFormSerie">
+                <div class="column avecAlign divFormSerie2 colorDiv">
+                    <h3>Jaquette du livre :</h3>
+                    <input type="file" id="jaquette" class="input-hidden" name="photo_lieu" />
+                    <label for="jaquette" class="marginTop marginBot">
+                        <img for="jaquette" class="imgSerie" src="img/imgSerie3.jpg">
+                    </label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
+                </div>
+                <div class="column avecAlign divFormSerie2">
+                    <input class="policeForm inputTaille2 " type="text" name="titre" placeholder="Titre">
+                    <input class="policeForm inputTaille2" type="text" name="parution" placeholder="Date de parution">
+                </div>
+
+            </div>
+            <div class="row avecAlign divFormSerie">
+                <input class="policeForm inputTaille" type="text" name="auteur" placeholder="Auteur">
+                <input class="policeForm inputTaille" type="text" name="langue" placeholder="Langue">
+            </div>
+            <div class="row avecAlign divFormSerie">
+                <input class="policeForm inputTaille" type="text" name="editeur" placeholder="Editeur">
+                <input class="policeForm inputTaille" type="text" name="collection_edition" placeholder="Collection">
+            </div>
+            <div class="row avecAlign divFormSerie ">
+                <input class="policeForm inputTaille" type="text" name="isbn" placeholder="Code ISBN">
+                <input class="policeForm inputTaille" type="text" name="quantite" placeholder="Nombre d'exemplaire">
+            </div>
+            <div class="marginTop">
+                    <input type="text" name="lien_image" value="">
+                    <input type="hidden" name="id_college" value='ObjectId("5b041bfaa933f4091d36af24")'>
+                    <input type="hidden" name="nom_college" value="Simin Palay">
+                    <input type="hidden" name="ville_college" value="Lescar">
+                <button class="btn valider" type="submit" name="enregistrer">Enregistrer</button>
+            </div>
+
+
+        </form>
+    </section>
+    <footer>
+        <!-- Bouton retour haut de page? -->
+    </footer>
+</div>
+<% include footer %>

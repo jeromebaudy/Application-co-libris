@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/general.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/documentaliste.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">   
+        function stopEvent(event) {
+            event.stopPropagation();
+        }
+        $(document).ready(function () {
+            $("div.deroule").hide();
+            $(".serie").click(function (event) {
+                $(this).next().toggle()
+            });
+        });
+    </script>
+
+    <head>
+
+        <% include header %>
+            <div class="main selector">
+                <section class="column avecAlign section1">
+                    <div class="maxWidth">
+                        <h1>Recherche d'une serie</h1>
+                        <p>Taper le titre du livre et choisissez parmis les série proposés celle qui vous convient. Vous pourrez
+                            ensuite renseigner les champs de réservation.</p>
+                    </div>
+                </section>
+                <section class="column avecAlign section2">
+                    <div class="maxWidth">
+
+
+                        <form class="column formSearch" action="/docu_recherche" method="POST">
+                            <% if (locals.flash && locals.flash.error) { %>
+                                <div>
+                                    <%= flash.error %>
+                                </div>
+                                <% } %>
+                                    <div class="row marginBot">
+                                        <input class="policeForm input-search" type="text" name="recherche" id="recherche" autocomplete="off" placeholder="Titre du livre">
+                                        <button class="btn search" type="submit" id="search">Rechercher</button>
+                                    </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- <label for="from">From</label>
+                <input type="text" id="from" name="from">
+                <label for="to">to</label>
+                <input type="text" id="to" name="to">-->
+
+
+
+
+                <% if (locals.tab_series) { %>
+                    <section class="row avecAlign section3">
+                        <div class="maxWidth resultat">
+                            <% for (serie of tab_series) { %>
+                                <article>
+                                    <div class="row avecAlign serie">
+                                        <img class="imgSerie marginRight" src="assets/img/<%= serie.lien_image %>.jpg">
+                                        <div class="divInfo1 row avecAlign">
+                                            <div>
+                                                <h3 class="marginBot2">
+                                                    <%= serie.titre %>
+                                                </h3>
+                                                <p class="marginBot2">Auteur :
+                                                    <%= serie.auteur %>
+                                                </p>
+                                                <p class="marginBot2">Editeur :
+                                                    <%= serie.editeur %>
+                                                </p>
+                                                <p>Collection :
+                                                    <%= serie.collection_edition %>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <p class="bold marginBot2">Propriétaire : </p>
+                                                <p class="marginBot">
+                                                    Collège
+                                                    <%= serie.college_proprietaire.nom_college %> -
+                                                        <%= serie.college_proprietaire.ville_college %>
+                                                </p>
+                                                <p>Temps de parcours : 40 minutes</p>
+                                            </div>
+                                        </div>
+                                        <div class="rowStart avecAlign marginBot2 divStatut">
+                                            <img class="svg marginRight" src="assets/img/circle-green.svg">
+                                            <p>Disponible</p>
+                                        </div>
+                                        <div class="tailleDivFleche">
+                                            <img class="svg2" src="assets/img/angle-down.svg">
+                                        </div>
+                                    </div>
+                                    <div class="row marginTop2 deroule" id="">
+
+                                        <form class="columnStart sansAlign">
+                                            <div class="column avecAlign maxWidth padding marginBot colorWhite selectDate">
+                                                <div class="row maxWidth">
+                                                    <div class="row midWidth justifyCenter">
+                                                        <label for="from" class="marginBot">Date d'emprunt :</label>
+                                                    </div>
+                                                    <div class="row midWidth justifyCenter">
+                                                        <label for="to" class="marginBot">Date de retour :</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row maxWidth">
+                                                    <div class="column avecAlign midWidth">
+                                                        <div type="text" id="from" class="" name="date_debut"></div>
+                                                        <input type="hidden" id="alternateDebut" name="date_debut">
+                                                    </div>
+                                                    <div class="column avecAlign midWidth">
+                                                        <div type="text" id="to" class="" name="date_fin"></div>
+                                                        <input type="hidden" id="alternateFin" name="date_fin">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="column avecAlign maxWidth colorWhite">
+                                                <div class="row maxWidth avecAlign padding">
+                                                    <label class="bold">Envoyer un message :</label>
+                                                </div>
+                                                <div class="padding marginNegatif">
+                                                    <textarea></textarea>
+                                                </div>
+                                                <div class="rowEnd avecAlign maxWidth padding marginNegatif2">
+                                                    <button class="btn envoyer">Envoyer le message</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div id="action2" class="columnStart sansAlign detailSerie">
+                                            <div class="marginBot detailSup">
+                                                <p class="marginBot">Nombre d'exemplaire : 21 livres</p>
+                                                <p class="marginBot">Langue : français</p>
+                                                <p class="marginBot">ISBN : 3787734535</p>
+                                                <p class="marginBot">Propriétaire : Jeanne d'Albret - Pau</p>
+                                            </div>
+                                            <div class="reservation2 detailSup marginBot">
+                                                <h4 class="marginBot bold">Réservation(s) validée :</h4>
+                                                <div>
+                                                    <p class="marginBot2">Fardo Gilbert :</p>
+                                                    <p class="marginBot">début: 15/04/2018 / fin: 23/06/2018</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <% } %>
+                        </div>
+                    </section>
+                    <% } %>
+
+            </div>
+
+            <script type="text/javascript" src="assets/js/documentaliste.js"></script>
+            <script type="text/javascript" src="assets/json/prets.js"></script>
+            <script type="text/javascript" src="assets/json/series.js"></script>
+            <script type="text/javascript"> 
+                $(function () {
+                    $('#recherche').autocomplete({
+                        source: function (request, response) {
+                            $.ajax({
+                                url: "/search",
+                                type: "GET",
+                                data: request,  // request is the value of search input
+                                success: function (data) {
+                                    console.log(data)
+                                    response(data)
+                                }
+                            });
+                        },
+                        // The minimum number of characters a user must type before a search is performed.
+                        minLength: 2,
+                    });
+
+                });
+
+                $(function () {
+                    let dateFormat = "dd/mm/yy";
+                    from = $("#from")
+                        .datepicker({
+                            dateFormat: "dd/mm/yy",
+                            altField: "#alternateDebut",
+                            minDate: 0,
+                            maxDate: "+6M",
+                            changeMonth: true,
+                            closeText: 'Fermer',
+                            prevText: 'Précédent',
+                            nextText: 'Suivant',
+                            currentText: 'Aujourd\'hui',
+                            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                            monthNamesShort: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                            dayNames: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
+                            dayNamesShort: ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'],
+                            dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                            weekHeader: 'Sem.',
+                        })
+                        .on("change", function () {
+                            to.datepicker("option", "minDate", getDate(this));
+                        }),
+                        to = $("#to").datepicker({
+                            dateFormat: "dd/mm/yy",
+                            altField: "#alternateFin",                    
+                            changeMonth: true,
+                            minDate: 0,
+                            closeText: 'Fermer',
+                            prevText: 'Précédent',
+                            nextText: 'Suivant',
+                            currentText: 'Aujourd\'hui',
+                            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                            monthNamesShort: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                            dayNames: ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'],
+                            dayNamesShort: ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'],
+                            dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                            weekHeader: 'Sem.',
+
+                        })
+
+                    function getDate(element) {
+                        console.log(dateFormat)
+                        var date;
+                        try {
+                            date = $.datepicker.parseDate(dateFormat, element.value);
+                        } catch (error) {
+                            date = null;
+                        }
+                        return date;
+                    }
+                });
+
+            </script>
+            <% include footer %>

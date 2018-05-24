@@ -1,0 +1,25 @@
+<% include head %>
+<% include header %>
+
+    <div class="main selector">
+        <section class="column avecAlign section1">
+            <div class="maxWidth">
+                <h1>Tableau de bord</h1>
+                <p>Vous pouvez choisir l'interface dans lesquel vous souhaitez intervenir ou obtenir des informations.</p>
+            </div>
+        </section>
+        <section class="row avecAlign section2">
+            <div class="row avecAlign maxWidth">
+                <a href="#" id="attente" class="choose">Demande en attente</a>
+                <a href="#" id="pret" class="choose">Mes prets</a>
+                <a href="#" id="emprunt" class="choose">Mes emprunts</a>
+                <a href="#" class="choose">Historique</a>
+            </div>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="assets/js/documentaliste.js"></script>
+    <script src="assets/json/prets.js"></script>
+    <script src="assets/json/series.js"></script>
+
+    <% include footer %>
