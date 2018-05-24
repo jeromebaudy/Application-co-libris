@@ -77,5 +77,5 @@ $ npm start
 
 ```
 
-## Enfin ouvrir le navigateur à l'adresse `http://localhost:8080/docu_recherche`
+### Enfin ouvrir le navigateur à l'adresse `http://localhost:8080/docu_recherche`
 
