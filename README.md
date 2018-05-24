@@ -69,7 +69,7 @@ $ npm install
 
 Ouvrir le server mongoDB en double cliquant sur le fichier .bat
 
-Dans le terminal se mettre à la racine de "master" et taper 
+Dans le terminal se mettre à la racine du projet et taper 
 
 ```
 
