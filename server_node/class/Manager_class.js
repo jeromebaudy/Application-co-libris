@@ -4,7 +4,7 @@
 
 var class_Connect = require('../bdd/Connect')
 
-class Manager {
+class Manager_class {
 
     constructor() {
         /* création d'une instance de la classe Connect que l'on importe ligne 5 */
@@ -47,4 +47,4 @@ class Manager {
     }
 }
 
-module.exports = Manager
+module.exports = Manager_class

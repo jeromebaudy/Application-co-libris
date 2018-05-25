@@ -4,6 +4,8 @@
 
 /* Import des dépendances */
 let express = require('express')
+let http = require('http')
+let reload = require('reload')
 
 /* Création de l'application */
 let app = express()
@@ -37,4 +39,7 @@ app.get('/docu_addSerie', (request, response) => {
     response.render('pages/docu_addSerie')
 })
 
-app.listen(8080)
+var server = http.createServer(app);
+
+server.listen(8080, () => console.log('Server started !'));
+reload(app)
