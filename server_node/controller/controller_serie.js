@@ -13,7 +13,7 @@ var class_serie = require('../class/Serie')
 
 /* Middleware */
 router.use('/assets', express.static('views/public'))
-router.use(bodyParser.urlencoded({ extended: false }))
+router.use(bodyParser.urlencoded({ extended: true }))
 router.use(bodyParser.json())
 router.use(session({ secret: 'azedbnvgntehsfz', saveUnitialized: true, cookie: { secure: false } }))
 router.use(require('../middlewares/flash'))

@@ -7,8 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js -e ejs,js"
   },
-  "author": "",
   "license": "ISC",
+  "author": {
+    "name": "Baudy Jérôme",
+    "email": "jeromebaudy64@live.fr"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
@@ -16,6 +19,7 @@
     "express-session": "^1.15.6",
     "mongoose": "^5.1.1",
     "nodemon": "^1.17.4",
+    "npm": "^6.1.0",
     "reload": "^2.2.2"
   }
 }
